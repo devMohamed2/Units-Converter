@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance Converter</title>
+    <style>
+        img {
+            height: 200px;
+            border-radius: 12px;
+        }
+
+        body {
+            text-align: center;
+            background-color: #cdcbcb;
+            color: #3d1111;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #inputs input {
+            width: 250px;
+            padding: 3px;
+        }
+
+        #inputs label {
+            margin: 0;
+            padding: 0;
+        }
+
+        #btn {
+            width: 150px;
+            height: 30px;
+        }
+
+        #outputGroup input {
+            width: 250px;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/Logo1.jpg" alt="Website logo">
+    <h1> Distance Converter</h1>
+    <div id="inputs">
+        <label for="amount"><b>Amount</b></label>
+        <input type="=number" id="inputValue" placeholder="Enter Value">
+    </div> <br>
+
+    <div id="inputsCategory">
+        <label for="from"><b>From</b></label>
+        <select name="" id="fromAmount">
+            <option value="kilometers">Kilometers</option>
+            <option value="meters">Meters</option>
+            <option value="miles">Miles</option>
+        </select><br><br>
+        <label for="to"><b>To</b></label>
+        <select name="" id="toAmount">
+            <option value="kilometers">Kilometers</option>
+            <option value="meters">Meters</option>
+            <option value="miles">Miles</option>
+        </select>
+    </div><br>
+
+    <button id="btn"><b>Convert</b></button> <br> <br>
+
+    <div id="outputGroup">
+        <label for="Result"><b>Result</b></label>
+        <input type="text" id="resultValue" placeholder="Result">
+    </div>
+    <br><br>
+    <div id="backToMainPage">
+        <a href="index.html"><button>Back To Main Page</button></a>
+    </div>
+    <script type="text/javascript">
+       document.getElementById("btn").addEventListener("click", convertedUnits)
+
+function convertedUnits() {
+    input = parseFloat(document.getElementById("inputValue").value);
+    from = document.getElementById("fromAmount").value;
+    to = document.getElementById("toAmount").value;
+    result = 0;
+
+    if (isNaN(input)) {
+        document.getElementById("resultValue").value = "Error!! Please Enter A Number";
+        return;
+    }
+    if (from === to){
+        result = input + " "+from ;}
+    
+    else if (from === "kilometers" && to === "meters"){
+        result = input *1000 +"(m)";
+    }
+    else if (from === "kilometers" && to === "miles"){
+        result = input * 0.621371 + "(mi)" ;
+    }
+    else if (from === "meters" && to === "kilometers"){
+        result = input / 1000 + "(KM)";
+    }
+    else if (from === "meters" && to === "miles"){
+        result = input * 0.00062137 + "(mi)" ;
+    }
+    else if (from === "miles" && to === "kilometers"){
+        result = input * 1.609 + "(KM)" ;
+    }
+    else if (from === "miles" && to === "meters"){
+        result = input * 1609.344 + "(M)" ;
+    }
+    
+    document.getElementById("resultValue").value = result;
+}
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #cbcbcb;
+    color: #3d1111;
+}
+
+
+img {
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    left: 570px;
+    border-radius: 12px;
+
+}
+
+#container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+#vision,
+#mission {
+    flex: 2;
+    padding: 20px;
+}
+
+#about {
+    padding: 20px;
+}
+
+
+#contact img {
+    display: inline;
+    height: 30px;
+    width: 30px;
+    left: 1px;
+
+}
+
+#btn {
+    margin: 10px;
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+
+}
+
+li {
+    list-style: none;
+    align-items: center;
+    display: inline;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    gap: 30px;
+
+
+}
+
+li a {
+    text-decoration: none;
+    align-items: center;
+    color: rgb(0, 0, 0);
+
+
+}
+
+li a:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+button  {
+    border-radius: 1px;
+}
+button :hover{
+    background-color: blanchedalmond;
+}
